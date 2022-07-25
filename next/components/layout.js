@@ -1,12 +1,14 @@
-// import Header from "./header";
-// import Footer from "./footer";
+import Menu from "./menu";
+import Footer from "./footer";
+import Header from "./header";
 
-const Layout = ({ children }) => {
+const Layout = ({ children, title }) => {
   return (
     <div className="content">
-      {/* <Header /> */}
-      {children}
-      {/* <Footer /> */}
+      <Menu />
+      {title && <Header title={title} />}
+      <main className="container">{children}</main>
+      <Footer />
     </div>
   );
 };

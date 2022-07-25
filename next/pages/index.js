@@ -1,31 +1,29 @@
 import axios from "axios";
+import Layout from "../components/layout";
+import Link from "next/link";
 
 export default function Home({ posts }) {
+  const setTag = (item) => {
+    switch (item.attributes.category) {
+      case "Маркетинг": // if (x === 'value1')
+        return "tag-yellow";
+        break;
+      case "Дизайн": // if (x === 'value2')
+        return "tag-green";
+        break;
+      case "Программирование":
+        return "tag-orange";
+        break;
+      default:
+        break;
+    }
+  };
   // some state
   // useEffect(() => {
   // fetch data
   // }, [])
   return (
-    <>
-      {posts.data.map((item) => {
-        return (
-          <>
-            <h3>{item.attributes.title}</h3>
-            <h4>{item.attributes.description}</h4>
-            <p>{item.attributes.content}</p>
-          </>
-        );
-      })}
-    </>
+    <Layout title={`Главная`}>
+    </Layout>
   );
-}
-
-export async function getServerSideProps() {
-  const postsRes = await axios.get("http://localhost:1337/api/posts");
-
-  return {
-    props: {
-      posts: postsRes.data,
-    },
-  };
 }
