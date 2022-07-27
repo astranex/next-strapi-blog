@@ -17,7 +17,7 @@ export default function PostPreview({ item }) {
     }
   };
 
-  const { data: image } = item.attributes.image;
+  const { data: image } = item?.attributes?.image;
 
   return (
     <Link href={`/posts/${item.id}`}>
