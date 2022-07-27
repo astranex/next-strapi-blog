@@ -20,6 +20,26 @@
     },
     "content": {
       "type": "richtext"
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": [
+        "Дизайн",
+        "Маркетинг",
+        "Программирование"
+      ]
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "author": {
+      "type": "string",
+      "unique": false
     }
   }
 }

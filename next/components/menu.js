@@ -3,15 +3,15 @@ import Link from "next/link";
 const Menu = () => {
   return (
     <div>
-      <nav class="top-menu">
+      <nav className="top-menu">
         <Link href="/">
-          <a class="navbar-logo">
+          <a className="navbar-logo">
             <img src="/logo.png" />
             <span
               style={{
                 fontWeight: 800,
                 position: "relative",
-                top: "-7px",
+                top: "-6px",
                 left: "6px",
               }}
             >
@@ -19,7 +19,7 @@ const Menu = () => {
             </span>
           </a>
         </Link>
-        <ul class="menu-main">
+        <ul className="menu-main">
           <li>
             <Link href="/">
               <a>ГЛАВНАЯ</a>
