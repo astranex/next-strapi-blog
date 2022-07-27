@@ -61,6 +61,11 @@ export default function PostPreview({ item }) {
                     : new Date(item.attributes.publishedAt).getMinutes()}
                 </small>
               </div>
+              {item.attributes.author && (
+                <div className="author">
+                  <p className="author-name">{item.attributes.author}</p>
+                </div>
+              )}
             </div>
           </div>
         </div>
