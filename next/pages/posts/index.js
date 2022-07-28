@@ -27,7 +27,7 @@ export default function Posts({ posts }) {
 
 export async function getServerSideProps() {
   const postsRes = await axios.get(
-    "http://10.200.52.9:1337/api/posts?populate=image"
+    "http://10.200.52.9:1337/api/posts?populate=author&populate=categories&populate=image"
   );
 
   return {

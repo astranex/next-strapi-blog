@@ -12,6 +12,7 @@ body {
 
 body {
   background: url("../public/bg.jpg") no-repeat center top / cover;
+  background-color: #f3f3f3;
   margin: 0;
 }
 
@@ -169,7 +170,7 @@ body,
   white-space: nowrap;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   background-color: #686868;
-  box-shadow: 0 0 2px rgba(102,102,102,0.4);
+  box-shadow: 0 0 2px rgba(102, 102, 102, 0.4);
   padding: 1px 0;
 }
 

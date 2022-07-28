@@ -21,14 +21,6 @@
     "content": {
       "type": "richtext"
     },
-    "category": {
-      "type": "enumeration",
-      "enum": [
-        "Дизайн",
-        "Маркетинг",
-        "Программирование"
-      ]
-    },
     "image": {
       "type": "media",
       "multiple": false,
@@ -38,8 +30,16 @@
       ]
     },
     "author": {
-      "type": "string",
-      "unique": false
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "posts"
+    },
+    "categories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::category.category",
+      "inversedBy": "posts"
     }
   }
 }

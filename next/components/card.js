@@ -1,30 +1,32 @@
 import Link from "next/link";
 
 export default function PostPreview({ item }) {
-  const setTag = (item) => {
-    switch (item.attributes.category) {
-      case "Маркетинг": // if (x === 'value1')
+  const { data: image } = item?.attributes?.image;
+  const { data: categories } = item?.attributes?.categories;
+  const { data: author } = item?.attributes?.author;
+
+  const setTag = (category) => {
+    switch (category.attributes.name) {
+      case "Маркетинг":
         return "tag-yellow";
         break;
-      case "Дизайн": // if (x === 'value2')
+      case "Дизайн":
         return "tag-green";
         break;
       case "Программирование":
         return "tag-orange";
+        break;
+      case "Музыка":
+        return "tag-red";
         break;
       default:
         break;
     }
   };
 
-  const { data: image } = item?.attributes?.image;
-
   return (
     <Link href={`/posts/${item.id}`}>
       <a>
-        {/* <h3>{item.attributes.title}</h3>
-              <h4>{item.attributes.description}</h4>
-              <p>{item.attributes.content}</p> */}
         <div className="card">
           <div className="card-header">
             {image && (
@@ -36,11 +38,17 @@ export default function PostPreview({ item }) {
             )}
           </div>
           <div className="card-body">
-            {item.attributes.category && (
-              <span className={`tag ${setTag(item)}`}>
-                {item.attributes.category}
-              </span>
-            )}
+            <div className="tags">
+              {categories.length !== 0 &&
+                categories.map((category) => {
+                  return (
+                    <span className={`tag ${setTag(category)}`}>
+                      {category?.attributes?.name}
+                    </span>
+                  );
+                })}
+            </div>
+
             <h4>{item.attributes.title}</h4>
             <p>{item.attributes.description}</p>
             <div className="date">
@@ -61,9 +69,9 @@ export default function PostPreview({ item }) {
                     : new Date(item.attributes.publishedAt).getMinutes()}
                 </small>
               </div>
-              {item.attributes.author && (
+              {author?.attributes.username && (
                 <div className="author">
-                  <p className="author-name">{item.attributes.author}</p>
+                  <p className="author-name">{author.attributes.username}</p>
                 </div>
               )}
             </div>
