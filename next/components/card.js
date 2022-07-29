@@ -1,28 +1,12 @@
 import Link from "next/link";
+import { setTag } from "../pages/posts/[id]";
 
 export default function PostPreview({ item }) {
   const { data: image } = item?.attributes?.image;
   const { data: categories } = item?.attributes?.categories;
   const { data: author } = item?.attributes?.author;
 
-  const setTag = (category) => {
-    switch (category.attributes.name) {
-      case "Маркетинг":
-        return "tag-yellow";
-        break;
-      case "Дизайн":
-        return "tag-green";
-        break;
-      case "Программирование":
-        return "tag-orange";
-        break;
-      case "Музыка":
-        return "tag-red";
-        break;
-      default:
-        break;
-    }
-  };
+
 
   return (
     <Link href={`/posts/${item.id}`}>

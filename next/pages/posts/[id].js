@@ -5,6 +5,25 @@ import Link from "next/link";
 import Layout from "../../components/Layout";
 import MarkdownIt from "markdown-it";
 
+export const setTag = (category) => {
+  switch (category.attributes.name) {
+    case "Маркетинг":
+      return "tag-yellow";
+      break;
+    case "Дизайн":
+      return "tag-green";
+      break;
+    case "Программирование":
+      return "tag-orange";
+      break;
+    case "Музыка":
+      return "tag-red";
+      break;
+    default:
+      break;
+  }
+};
+
 export default function Post({ post }) {
   const md = new MarkdownIt({
     html: true,
@@ -12,18 +31,40 @@ export default function Post({ post }) {
 
   const htmlContent = md.render(post.attributes.content);
   const { data: image } = post.attributes?.image;
+  const { data: categories } = post.attributes?.categories;
+  const { data: author } = post.attributes?.author;
 
   return (
     <Layout>
-      {post.id}. {post.attributes.title}{" "}
-      {post.attributes.category && "- " + post.attributes.category} -{" "}
-      <Link href="/posts">
-        <a>Вернуться к постам</a>
-      </Link>
-      {image && <img src={`http://10.200.52.9:1337${image.attributes.url}`} />}
-      <h3>{post.attributes.title}</h3>
-      <h4>{post.attributes.description}</h4>
-      <section dangerouslySetInnerHTML={{ __html: htmlContent }}></section>
+      <div className="post">
+        <div className="post-navigation">
+          {post.id}. {post.attributes.title}
+          <div className="post-navigation--categories">
+            {categories.length !== 0 &&
+              categories.map((category) => {
+                return (
+                  <span className={`tag ${setTag(category)}`}>
+                    {category?.attributes?.name}
+                  </span>
+                );
+              })}
+          </div>
+        </div>
+
+        <div className="post-button">
+          <Link href="/posts">
+            <a>Вернуться к постам</a>
+          </Link>
+        </div>
+        <div className="article-image">
+          {image && (
+            <img src={`http://10.200.52.9:1337${image.attributes.url}`} />
+          )}
+        </div>
+        <h3>{post.attributes.title}</h3>
+        <h4>{post.attributes.description}</h4>
+        <section dangerouslySetInnerHTML={{ __html: htmlContent }}></section>
+      </div>
     </Layout>
   );
 }
