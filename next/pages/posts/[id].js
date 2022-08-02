@@ -38,32 +38,47 @@ export default function Post({ post }) {
     <Layout>
       <div className="post">
         <div className="post-navigation">
-          {post.id}. {post.attributes.title}
-          <div className="post-navigation--categories">
-            {categories.length !== 0 &&
-              categories.map((category) => {
-                return (
-                  <span className={`tag ${setTag(category)}`}>
-                    {category?.attributes?.name}
-                  </span>
-                );
-              })}
+          <h2>
+            {post.id}. {post.attributes.title}
+            <div className="post-navigation--categories">
+              {categories.length !== 0 &&
+                categories.map((category) => {
+                  return (
+                    <span className={`tag ${setTag(category)}`}>
+                      {category?.attributes?.name}
+                    </span>
+                  );
+                })}
+            </div>
+          </h2>
+
+          <div className="post-button">
+            <Link href="/posts">
+              <a>Вернуться к постам</a>
+            </Link>
           </div>
         </div>
 
-        <div className="post-button">
-          <Link href="/posts">
-            <a>Вернуться к постам</a>
-          </Link>
-        </div>
-        <div className="article-image">
+        <div className="post-image">
           {image && (
             <img src={`http://10.200.52.9:1337${image.attributes.url}`} />
           )}
         </div>
-        <h3>{post.attributes.title}</h3>
-        <h4>{post.attributes.description}</h4>
-        <section dangerouslySetInnerHTML={{ __html: htmlContent }}></section>
+        <div className="post-title">
+          <h3>{post.attributes.title}</h3>
+        </div>
+        <div className="post-description">
+          <h4>{post.attributes.description}</h4>
+        </div>
+        <section
+          className="post-content"
+          dangerouslySetInnerHTML={{ __html: htmlContent }}
+        ></section>
+        {author && (
+          <div className="post-author">
+            <p>Автор: {author.attributes.username}</p>
+          </div>
+        )}
       </div>
     </Layout>
   );

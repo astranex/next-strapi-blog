@@ -21,6 +21,11 @@ a {
   color: $primaryColor;
 }
 
+ul {
+  margin: 0;
+  padding: 0;
+}
+
 li {
   list-style-type: none;
 }
@@ -168,7 +173,6 @@ body,
   width: 230px;
   z-index: 10000;
   white-space: nowrap;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   background-color: #686868;
   box-shadow: 0 0 2px rgba(102, 102, 102, 0.4);
   padding: 1px 0;

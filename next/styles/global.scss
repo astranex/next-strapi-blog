@@ -32,6 +32,13 @@ h1 {
   background: rgba(0, 0, 0, 0.15);
   color: #fff;
 }
+.page-content {
+  max-width: 1000px;
+  background: #fff;
+  border-radius: 15px;
+  padding: 5px 20px 5px 20px;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+}
 .top-menu {
   max-width: 1500px;
   background: #ffffff;
@@ -219,6 +226,47 @@ h1 {
   border-radius: 100px;
   background: #f5f5f5;
 }
+.post {
+  max-width: 1000px;
+  padding: 25px;
+  border-radius: 15px;
+  background: #fff;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+}
+.post-navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.post h2 {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+.post-navigation--categories {
+  display: inline-block;
+  position: relative;
+  top: -5px;
+  left: 10px;
+}
+.post img {
+  width: 100%;
+}
+.post-button a {
+  font-weight: 600;
+  padding-bottom: 4px;
+  transition: 0.2s ease;
+}
+.post-author {
+  font-size: 16px;
+}
+.post-author p {
+  padding: 10px 0 10px 0;
+  margin-bottom: 0;
+  text-align: center;
+  border-radius: 100px;
+  background: #f5f5f5;
+}
 .categories {
   margin: 0 10px 0 10px;
   display: inline-block;
@@ -238,7 +286,7 @@ footer {
     justify-content: center;
     align-items: center;
     margin: auto;
-    margin-left: -40px;
+    // margin-left: -40px;
     color: #fff;
     font-size: 18px;
   }
@@ -277,6 +325,7 @@ footer {
     float: none;
     padding-top: 20px;
     a {
+      margin: 0;
       padding: 0 10px;
       &:before {
         transform: rotate(45deg) translateX(-6px);

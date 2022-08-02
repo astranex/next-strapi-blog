@@ -68,13 +68,6 @@
       "relation": "oneToMany",
       "target": "api::post.post",
       "mappedBy": "author"
-    },
-    "avatar": {
-      "allowedTypes": [
-        "images"
-      ],
-      "type": "media",
-      "multiple": false
     }
   }
 }
