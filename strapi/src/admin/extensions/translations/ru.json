@@ -1,0 +1,15 @@
+{
+  "global.change-password": "Изменить пароль",
+  "Auth.form.currentPassword.label": "Текущий пароль",
+  "global.password": "Пароль",
+  "content-manager.form.Input.sort.order": "Порядок сортировки по умолчанию",
+  "global.delete": "Удалить",
+  "content-manager.containers.Edit.information.created": "Создано",
+  "content-manager.containers.Edit.information.by": "Автор",
+  "content-manager.link-to-ctb": "Отредактировать модель",
+  "Settings.profile.form.section.experience.here": "здесь",
+  "Settings.profile.form.section.experience.interfaceLanguageHelp": "Изменения предпочтений будут касаться только вас. Более подробная информация доступна {here}.",
+  "Settings.profile.form.section.experience.mode.label": "Тема интерфейса",
+  "Settings.profile.form.section.experience.mode.hint": "Отображает ваш интерфейс в выбранной теме.",
+  "Settings.profile.form.section.experience.mode.option-label": "{name} тема"
+}

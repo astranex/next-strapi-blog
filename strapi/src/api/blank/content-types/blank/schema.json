@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "blanks",
+  "info": {
+    "singularName": "blank",
+    "pluralName": "blanks",
+    "displayName": "Бланки"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "file": {
+      "allowedTypes": [
+        "files"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}
