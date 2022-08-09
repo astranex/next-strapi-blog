@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "usefuls",
+  "info": {
+    "singularName": "useful",
+    "pluralName": "usefuls",
+    "displayName": "Часто задаваемые вопросы"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "question": {
+      "type": "string",
+      "required": true
+    },
+    "answer": {
+      "type": "text",
+      "required": true
+    }
+  }
+}
