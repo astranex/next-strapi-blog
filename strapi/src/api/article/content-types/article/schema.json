@@ -26,6 +26,12 @@
       "allowedTypes": [
         "images"
       ]
+    },
+    "root": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::root.root",
+      "inversedBy": "articles"
     }
   }
 }

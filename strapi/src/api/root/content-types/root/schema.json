@@ -26,6 +26,12 @@
       "relation": "oneToMany",
       "target": "api::blank.blank",
       "mappedBy": "root"
+    },
+    "articles": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::article.article",
+      "mappedBy": "root"
     }
   }
 }
