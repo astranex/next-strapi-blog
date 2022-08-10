@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tariffs",
+  "info": {
+    "singularName": "tariff",
+    "pluralName": "tariffs",
+    "displayName": "Тарифы",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string"
+    },
+    "content": {
+      "type": "richtext",
+      "required": true
+    },
+    "info": {
+      "type": "richtext"
+    },
+    "root": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::root.root",
+      "inversedBy": "tariffs"
+    }
+  }
+}

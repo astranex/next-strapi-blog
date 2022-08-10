@@ -4,7 +4,8 @@
   "info": {
     "singularName": "blank",
     "pluralName": "blanks",
-    "displayName": "Бланки"
+    "displayName": "Бланки",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -17,12 +18,18 @@
       "unique": true
     },
     "file": {
-      "allowedTypes": [
-        "files"
-      ],
       "type": "media",
       "multiple": false,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "files"
+      ]
+    },
+    "root": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::root.root",
+      "inversedBy": "blanks"
     }
   }
 }

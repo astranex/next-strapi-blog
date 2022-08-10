@@ -58,8 +58,7 @@ input {
   background: rgb(234, 234, 239) !important;
 }
 
-.rbVgq svg,
-.rbVgq img {
+img[alt="Application logo"] {
   height: 3rem !important;
   width: 3rem !important;
   margin-top: 3px;

@@ -4,7 +4,8 @@
   "info": {
     "singularName": "article",
     "pluralName": "articles",
-    "displayName": "Новости"
+    "displayName": "Новости",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -19,12 +20,12 @@
       "type": "richtext"
     },
     "image": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
       "multiple": false,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
     }
   }
 }

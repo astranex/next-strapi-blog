@@ -4,7 +4,8 @@
   "info": {
     "singularName": "useful",
     "pluralName": "usefuls",
-    "displayName": "Часто задаваемые вопросы"
+    "displayName": "Часто задаваемые вопросы",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -16,7 +17,7 @@
       "required": true
     },
     "answer": {
-      "type": "text",
+      "type": "richtext",
       "required": true
     }
   }

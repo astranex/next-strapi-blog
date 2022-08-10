@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "roots",
+  "info": {
+    "singularName": "root",
+    "pluralName": "roots",
+    "displayName": "Корни"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "tariffs": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::tariff.tariff",
+      "mappedBy": "root"
+    },
+    "blanks": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::blank.blank",
+      "mappedBy": "root"
+    }
+  }
+}
