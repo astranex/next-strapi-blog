@@ -85,13 +85,68 @@ export default function Post({ post }) {
 }
 
 export async function getServerSideProps(ctx) {
-  const postsRes = await axios.get(
-    `http://10.200.52.9:1337/api/posts/${ctx.query.id}?populate=author&populate=categories&populate=image`
+  // const postRes = await axios.get(
+  //   `http://10.200.52.9:1337/api/posts/${ctx.query.id}?populate=author&populate=categories&populate=image`
+  // );
+
+  const postRes = await axios.post(
+    "http://10.200.52.9:1337/graphql",
+    {
+      query: `
+        query getPost {
+        post (id: ${ctx.query.id}) {
+          data {
+            id
+            attributes {
+              publishedAt
+              title
+              description
+              content
+              categories {
+                data {
+                  attributes {
+                    name
+                  }
+                }
+              }
+              image {
+                data {
+                  attributes {
+                    url
+                  }
+                }
+              }
+              author {
+                data {
+                  attributes {
+                    username
+                    avatar {
+                      data {
+                        attributes {
+                          url
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      `,
+      variables: {},
+    },
+    {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }
   );
 
   return {
     props: {
-      post: postsRes.data.data,
+      post: postRes.data.data.post.data,
     },
   };
 }
