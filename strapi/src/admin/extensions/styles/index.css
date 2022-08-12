@@ -68,3 +68,7 @@ img[alt="Application logo"] {
 .cgIHMa {
   height: 19px !important;
 }
+
+/* #slug::after {
+  content: url(https://img.icons8.com/material-outlined/344/add-link.png);
+} */

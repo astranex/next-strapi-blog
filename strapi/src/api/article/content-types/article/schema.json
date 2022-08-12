@@ -32,6 +32,9 @@
       "relation": "manyToOne",
       "target": "api::root.root",
       "inversedBy": "articles"
+    },
+    "slug": {
+      "type": "string"
     }
   }
 }
