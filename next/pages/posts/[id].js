@@ -25,11 +25,12 @@ export const setTag = (category) => {
 };
 
 export default function Post({ post }) {
-  const md = new MarkdownIt({
-    html: true,
-  });
+  // const md = new MarkdownIt({
+  //   html: true,
+  // });
 
-  const htmlContent = md.render(post.attributes.content);
+  // const htmlContent = md.render(post.attributes.content);
+  const htmlContent = post.attributes.content;
   const { data: image } = post.attributes?.image;
   const { data: categories } = post.attributes?.categories;
   const { data: author } = post.attributes?.author;

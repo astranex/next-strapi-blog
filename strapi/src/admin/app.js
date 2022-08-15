@@ -16,8 +16,11 @@ export default {
     },
     theme: {
       colors: {
-        primary100: "#fafcf7", primary200: "#e3f0d1", primary300: "#e3f0d1", primary400: "#7bb83c", 
-        primary500: "#7bb83c", 
+        primary100: "#fafcf7",
+        primary200: "#e3f0d1",
+        primary300: "#e3f0d1",
+        primary400: "#7bb83c",
+        primary500: "#7bb83c",
         primary600: "#7bb83c",
         primary700: "#67a32c",
         primary800: "#67a32c",
